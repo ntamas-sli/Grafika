@@ -84,7 +84,8 @@ namespace Szeminarium1
             Gl.CompileShader(fshader);
 
             program = Gl.CreateProgram();
-            Gl.AttachShader(program, vshader);
+            //Gl.AttachShader(program, vshader);
+            CheckOpenGLError("AttachShader kihagyasa.");
             Gl.AttachShader(program, fshader);
             Gl.LinkProgram(program);
             Gl.DetachShader(program, vshader);
@@ -116,10 +117,8 @@ namespace Szeminarium1
             uint vao = Gl.GenVertexArray();
             Gl.BindVertexArray(vao);
 
-            int a = 1;
-
             float[] vertexArray = new float[] {
-                -0.5f, 0.0f
+                -0.5f, -0.5f, 0.0f,
                 +0.5f, -0.5f, 0.0f,
                  0.0f, +0.5f, 0.0f,
                  1f, 1f, 0f
@@ -137,15 +136,15 @@ namespace Szeminarium1
                 2, 1, 3
             };
 
-            CheckOpenGLError("Kevesebb elem a vertex array-ben.");
+            //CheckOpenGLError("Kevesebb elem a vertex array-ben.");
 
             uint vertices = Gl.GenBuffer();
-            //Gl.BindBuffer(GLEnum.ArrayBuffer, vertices);
+            Gl.BindBuffer(GLEnum.ArrayBuffer, vertices);
             Gl.BufferData(GLEnum.ArrayBuffer, (ReadOnlySpan<float>)vertexArray.AsSpan(), GLEnum.StaticDraw);
             Gl.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 0, null);
             Gl.EnableVertexAttribArray(0);
 
-            CheckOpenGLError("BindBuffer lepes kihagyasa a BufferData elott.");
+            //CheckOpenGLError("BindBuffer lepes kihagyasa a BufferData elott.");
 
             uint colors = Gl.GenBuffer();
             Gl.BindBuffer(GLEnum.ArrayBuffer, colors);
