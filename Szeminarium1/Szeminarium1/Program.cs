@@ -84,7 +84,7 @@ namespace Szeminarium1
             Gl.CompileShader(fshader);
 
             program = Gl.CreateProgram();
-            //Gl.AttachShader(program, vshader);
+            Gl.AttachShader(program, vshader);
             CheckOpenGLError("AttachShader kihagyasa.");
             Gl.AttachShader(program, fshader);
             Gl.LinkProgram(program);
@@ -118,22 +118,46 @@ namespace Szeminarium1
             Gl.BindVertexArray(vao);
 
             float[] vertexArray = new float[] {
-                -0.5f, -0.5f, 0.0f,
-                +0.5f, -0.5f, 0.0f,
-                 0.0f, +0.5f, 0.0f,
-                 1f, 1f, 0f
+                0f, 0f, 0.0f,
+                0f, -1f, 0.0f,
+                -0.8f, 0.6f, 0.0f,
+                -0.8f, -0.4f, 0f,
+
+                0f, 0f, 0.0f,
+                0f, -1f, 0.0f,
+                0.8f, -0.4f, 0f,
+                0.8f, 0.6f, 0.0f,
+
+                0f, 0f, 0.0f,
+                0f, 1f, 0f,
+                -0.8f, 0.6f, 0.0f,
+                0.8f, 0.6f, 0.0f   
             };
 
             float[] colorArray = new float[] {
                 1.0f, 0.0f, 0.0f, 1.0f,
-                0.0f, 1.0f, 0.0f, 1.0f,
-                0.0f, 0.0f, 1.0f, 1.0f,
                 1.0f, 0.0f, 0.0f, 1.0f,
+                1.0f, 0.0f, 0.0f, 1.0f,
+                1.0f, 0.0f, 0.0f, 1.0f,
+
+                1.0f, 1.0f, 0.0f, 1.0f,
+                1.0f, 1.0f, 0.0f, 1.0f,
+                1.0f, 1.0f, 0.0f, 1.0f,
+                1.0f, 1.0f, 0.0f, 1.0f,
+
+                1.0f, 0.0f, 1.0f, 1.0f,
+                1.0f, 0.0f, 1.0f, 1.0f,
+                1.0f, 0.0f, 1.0f, 1.0f,
+                1.0f, 0.0f, 1.0f, 1.0f,
             };
 
             uint[] indexArray = new uint[] { 
                 0, 1, 2,
-                2, 1, 3
+                1, 2, 3,
+                4, 5, 6,
+                4, 6, 7,
+                8, 9, 10,
+                8, 9, 11
             };
 
             //CheckOpenGLError("Kevesebb elem a vertex array-ben.");
