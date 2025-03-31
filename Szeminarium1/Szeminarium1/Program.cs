@@ -117,22 +117,47 @@ namespace Szeminarium1
             uint vao = Gl.GenVertexArray();
             Gl.BindVertexArray(vao);
 
+            float[] v1 = { 0f, 0.1f, 0.0f };
+            float[] v2 = { 0f, -1f, 0.0f };
+            float[] v3 = { -0.9f, 0.6f, 0.0f };
+            float[] v4 = { 0.9f, 0.6f, 0.0f };
+            float[] v5 = { 0.8f, -0.4f, 0.0f };
+            float[] v6 = { -0.8f, -0.4f, 0.0f };
+            float[] v7 = { 0f, 0.9f, 0.0f };
+
             float[] vertexArray = new float[] {
-                0f, 0f, 0.0f,
-                0f, -1f, 0.0f,
-                -0.8f, 0.6f, 0.0f,
-                -0.8f, -0.4f, 0f,
+                v1[0], v1[1], v1[2],
+                v2[0], v2[1], v2[2],
+                v3[0], v3[1], v3[2],
+                v6[0], v6[1], v6[2],
+                    
+                v1[0], v1[1], v1[2],
+                v2[0], v2[1], v2[2],
+                v5[0], v5[1], v5[2],
+                v4[0], v4[1], v4[2],
 
-                0f, 0f, 0.0f,
-                0f, -1f, 0.0f,
-                0.8f, -0.4f, 0f,
-                0.8f, 0.6f, 0.0f,
-
-                0f, 0f, 0.0f,
-                0f, 1f, 0f,
-                -0.8f, 0.6f, 0.0f,
-                0.8f, 0.6f, 0.0f   
+                v1[0], v1[1], v1[2],
+                v7[0], v7[1], v7[2],
+                v3[0], v3[1], v3[2],
+                v4[0], v4[1], v4[2],
             };
+
+            //float[] vertexArray = new float[] {
+            //    0f, 0f, 0.0f,
+            //    0f, -1f, 0.0f,
+            //    -0.8f, 0.6f, 0.0f,
+            //    -0.8f, -0.4f, 0f,
+            //
+            //    0f, 0f, 0.0f,
+            //    0f, -1f, 0.0f,
+            //    0.8f, -0.4f, 0f,
+            //    0.8f, 0.6f, 0.0f,
+            //
+            //    0f, 0f, 0.0f,
+            //    0f, 1f, 0f,
+            //    -0.9f, 0.6f, 0.0f,
+            //    0.9f, 0.6f, 0.0f   
+            //};
 
             float[] colorArray = new float[] {
                 1.0f, 0.0f, 0.0f, 1.0f,
