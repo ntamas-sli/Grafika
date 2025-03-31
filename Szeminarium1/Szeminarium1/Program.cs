@@ -142,23 +142,6 @@ namespace Szeminarium1
                 v4[0], v4[1], v4[2],
             };
 
-            //float[] vertexArray = new float[] {
-            //    0f, 0f, 0.0f,
-            //    0f, -1f, 0.0f,
-            //    -0.8f, 0.6f, 0.0f,
-            //    -0.8f, -0.4f, 0f,
-            //
-            //    0f, 0f, 0.0f,
-            //    0f, -1f, 0.0f,
-            //    0.8f, -0.4f, 0f,
-            //    0.8f, 0.6f, 0.0f,
-            //
-            //    0f, 0f, 0.0f,
-            //    0f, 1f, 0f,
-            //    -0.9f, 0.6f, 0.0f,
-            //    0.9f, 0.6f, 0.0f   
-            //};
-
             float[] colorArray = new float[] {
                 1.0f, 0.0f, 0.0f, 1.0f,
                 1.0f, 0.0f, 0.0f, 1.0f,
