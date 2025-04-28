@@ -241,9 +241,11 @@ namespace Szeminarium1_24_02_17_2
             SetViewerPosition();
             SetShininess();
 
-            DrawPulsingCenterCube();
+            //DrawPulsingCenterCube();
 
-            DrawRevolvingCube();
+            //DrawRevolvingCube();
+
+            DrawPipe();
 
             //ImGuiNET.ImGui.ShowDemoWindow();
             ImGuiNET.ImGui.Begin("Lighting properties",
@@ -421,6 +423,32 @@ namespace Szeminarium1_24_02_17_2
             var error = (ErrorCode)Gl.GetError();
             if (error != ErrorCode.NoError)
                 throw new Exception("GL.GetError() returned " + error.ToString());
+        }
+
+        public static unsafe void DrawPipe()
+        {
+            int numberOfCubes = 18;
+            float radius = 0.28f;
+            float scaleAmount = 0.2f;
+
+            for (int i = 0; i < numberOfCubes; i++)
+            {
+                float angle = (float)(2 * Math.PI * i / numberOfCubes);
+                float x = radius * MathF.Cos(angle);
+                float z = radius * MathF.Sin(angle);
+
+                Matrix4X4<float> scale = Matrix4X4.CreateScale(scaleAmount);
+                Matrix4X4<float> rotation = Matrix4X4.CreateRotationY(-angle);
+                Matrix4X4<float> translation = Matrix4X4.CreateTranslation(x, 0f, z);
+
+                Matrix4X4<float> modelMatrix = scale * rotation * translation;
+
+                SetModelMatrix(modelMatrix);
+                Gl.BindVertexArray(glCubeRotating.Vao);
+                Gl.DrawElements(GLEnum.Triangles, glCubeRotating.IndexArrayLength, GLEnum.UnsignedInt, null);
+                Gl.BindVertexArray(0);
+            }
+
         }
     }
 }
