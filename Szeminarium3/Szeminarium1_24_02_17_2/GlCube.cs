@@ -35,42 +35,46 @@ namespace Szeminarium1_24_02_17_2
             Gl.BindVertexArray(vao);
 
             // counter clockwise is front facing
+            float width = 0.1f;
+            float height = 2.0f;
+            float depth = 0.5f;
+
             float[] vertexArray = new float[] {
                 // top face
-                -0.5f, 0.5f, 0.5f, 0f, 1f, 0f,
-                0.5f, 0.5f, 0.5f, 0f, 1f, 0f,
-                0.5f, 0.5f, -0.5f, 0f, 1f, 0f,
-                -0.5f, 0.5f, -0.5f, 0f, 1f, 0f,
+                -width / 2, height / 2, depth / 2, 0f, 1f, 0f,
+                width / 2, height / 2, depth / 2, 0f, 1f, 0f,
+                width / 2, height / 2, -depth / 2, 0f, 1f, 0f,
+                -width / 2, height / 2, -depth / 2, 0f, 1f, 0f,
 
                 // front face
-                -0.5f, 0.5f, 0.5f, 0f, 0f, 1f,
-                -0.5f, -0.5f, 0.5f, 0f, 0f, 1f,
-                0.5f, -0.5f, 0.5f, 0f, 0f, 1f,
-                0.5f, 0.5f, 0.5f, 0f, 0f, 1f,
+                -width / 2, height / 2, depth / 2, 0f, 0f, 1f,
+                -width / 2, -height / 2, depth / 2, 0f, 0f, 1f,
+                width / 2, -height / 2, depth / 2, 0f, 0f, 1f,
+                width / 2, height / 2, depth / 2, 0f, 0f, 1f,
 
                 // left face
-                -0.5f, 0.5f, 0.5f, -1f, 0f, 0f,
-                -0.5f, 0.5f, -0.5f, -1f, 0f, 0f,
-                -0.5f, -0.5f, -0.5f, -1f, 0f, 0f,
-                -0.5f, -0.5f, 0.5f, -1f, 0f, 0f,
+                -width / 2, height / 2, depth / 2, -1f, 0f, 0f,
+                -width / 2, height / 2, -depth / 2, -1f, 0f, 0f,
+                -width / 2, -height / 2, -depth / 2, -1f, 0f, 0f,
+                -width / 2, -height / 2, depth / 2, -1f, 0f, 0f,
 
                 // bottom face
-                -0.5f, -0.5f, 0.5f, 0f, -1f, 0f,
-                0.5f, -0.5f, 0.5f,0f, -1f, 0f,
-                0.5f, -0.5f, -0.5f,0f, -1f, 0f,
-                -0.5f, -0.5f, -0.5f,0f, -1f, 0f,
+                -width / 2, -height / 2, depth / 2, 0f, -1f, 0f,
+                width / 2, -height / 2, depth / 2, 0f, -1f, 0f,
+                width / 2, -height / 2, -depth / 2, 0f, -1f, 0f,
+                -width / 2, -height / 2, -depth / 2, 0f, -1f, 0f,
 
                 // back face
-                0.5f, 0.5f, -0.5f, 0f, 0f, -1f,
-                -0.5f, 0.5f, -0.5f,0f, 0f, -1f,
-                -0.5f, -0.5f, -0.5f,0f, 0f, -1f,
-                0.5f, -0.5f, -0.5f,0f, 0f, -1f,
+                width / 2, height / 2, -depth / 2, 0f, 0f, -1f,
+                -width / 2, height / 2, -depth / 2, 0f, 0f, -1f,
+                -width / 2, -height / 2, -depth / 2, 0f, 0f, -1f,
+                width / 2, -height / 2, -depth / 2, 0f, 0f, -1f,
 
                 // right face
-                0.5f, 0.5f, 0.5f, 1f, 0f, 0f,
-                0.5f, 0.5f, -0.5f,1f, 0f, 0f,
-                0.5f, -0.5f, -0.5f,1f, 0f, 0f,
-                0.5f, -0.5f, 0.5f,1f, 0f, 0f
+                width / 2, height / 2, depth / 2, 1f, 0f, 0f,
+                width / 2, height / 2, -depth / 2, 1f, 0f, 0f,
+                width / 2, -height / 2, -depth / 2, 1f, 0f, 0f,
+                width / 2, -height / 2, depth / 2, 1f, 0f, 0f
             };
 
             List<float> colorsList = new List<float>();
